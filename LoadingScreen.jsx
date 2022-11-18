@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
-import App from "../App";
 
 const spinAnimation = keyframes`
 0% {
@@ -35,6 +34,7 @@ top: 0;
 bottom: 0;
 left: 0;
 right: 0;
+z-index: 999;
 `;
 
 const LoadingContainer = styled.div`
@@ -46,7 +46,6 @@ justify-content: center;
 align-items: center;
 position: fixed;
 background: black;
-z-index: 999;
 `;
 const Spinner = styled.div`
 width: 64px;
@@ -93,7 +92,7 @@ const LoadingScreen = () => {
           </LoadingContent>
         </LoadingContainer>
       ) : (
-        <App />
+        null
       )
       }
     </Container>
