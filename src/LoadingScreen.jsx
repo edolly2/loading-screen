@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
-import App from "./App";
+import App from "../App";
 
 const spinAnimation = keyframes`
 0% {
