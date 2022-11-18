@@ -11,13 +11,21 @@ const spinAnimation = keyframes`
 }
 `;
 
-const titleAnimation = keyframes`
+const dots = keyframes`
 0% {
-  color: black;
+  content: "";
+}
+25% {
+  content: ".";
+}
+50% {
+  content: "..";
+}
+75% {
+  content: "...";
 }
 100% {
-  color: white;
-  transform: scale(1.2);
+  content: "";
 }
 `;
 
@@ -53,8 +61,15 @@ const LoadingContent = styled.div`
 `;
 
 const LoadingContentTitle = styled.h1`
-color: white;
-animation: ${titleAnimation} 1.2s linear infinite;
+color: #3d5af1;
+`;
+
+const Dots = styled.span`
+position: absolute;
+  &::after {
+    content: "";
+    animation: ${dots} 2s linear infinite;
+  }
 `;
 
 
@@ -74,7 +89,7 @@ const LoadingScreen = () => {
         <LoadingContainer>
           <Spinner />
           <LoadingContent>
-            <LoadingContentTitle>Loading...</LoadingContentTitle>
+            <LoadingContentTitle>Loading<Dots></Dots></LoadingContentTitle>
           </LoadingContent>
         </LoadingContainer>
       ) : (
